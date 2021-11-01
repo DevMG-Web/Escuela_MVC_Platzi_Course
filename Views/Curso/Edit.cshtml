@@ -1,0 +1,31 @@
+﻿@model Curso
+  
+@{
+    ViewData["Title"] = "Informacion Curso";
+}
+
+<h1 class="display-4">@ViewData["Title"]</h1>
+<div asp-validation-summary="All"></div>
+<input type="hidden" asp-for="Id" />
+<form method="POST">
+    <div>
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre" />
+    </div>
+    <div>
+        <label asp-for="Direccion"></label>
+        <input asp-for="Direccion" />
+    </div>
+    <div>
+        <label asp-for="Jornada"></label>
+        @Html.DropDownList("Jornada", 
+            Html.GetEnumSelectList<TiposJornada>(),
+            "Seleccione una jornada",
+            new { @class = "form-control" }
+        )
+    </div>
+    <input type="submit" value="ENVIAR" />
+</form>
+
+<p><i>@ViewBag.Fecha</i></p>
+

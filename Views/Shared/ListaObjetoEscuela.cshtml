@@ -1,0 +1,17 @@
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Id</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>@obj.Nombre</td>
+                <td>@obj.Id</td>
+            </tr>
+        }
+    </tbody>
+</table>

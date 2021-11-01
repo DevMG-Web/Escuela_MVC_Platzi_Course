@@ -1,0 +1,24 @@
+@model IEnumerable<Curso>
+
+<table class="table table-striped">
+    <thead class="table table-dark">
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Id</th>
+            <th scope="col">Direccion</th>
+            <th scope="col" colspan="2"> <div class="text-center"> Acciones</div></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>@obj.Nombre</td>
+                <td>@obj.Id</td>
+                <td>@obj.Direccion</td>
+                <td><a href="/Curso/Edit/@obj.Id" class="btn btn-success"> EDITAR </a></td>
+                <td><a href="/Curso/Edit/@obj.Id" class="btn btn-danger"> ELIMINAR </a></td>
+            </tr>
+        }
+    </tbody>
+</table>
